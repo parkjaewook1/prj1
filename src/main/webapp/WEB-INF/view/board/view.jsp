@@ -1,16 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 2024-05-01
-  Time: 오전 11:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
+<c:import url="/WEB-INF/fragment/navbar.jsp"></c:import>
 <h3>${board.id}번 게시물</h3>
 <div>제목 <input type="text" value="${board.title}" readonly></div>
 <div>
@@ -24,6 +19,12 @@
 <div>
     작성일지
     <input type="datetime-local" readonly value="${board.inserted}">
+</div>
+<div>
+    <form action="/delete" method="post">
+        <input type="hidden" name="id" value="${board.id}">
+    </form>
+    <button>삭제</button>
 </div>
 </body>
 </html>
