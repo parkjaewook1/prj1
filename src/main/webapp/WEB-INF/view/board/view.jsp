@@ -18,6 +18,7 @@
     <textarea cols="30" rows="10" readonly> ${board.content}</textarea>
 </div>
 <div>
+
     작성자
     <input type="text" readonly value="${board.writer}">
 </div>
