@@ -23,17 +23,26 @@ public interface BoardMapper {
     Board selectById(Integer id);
 
     @Select("""
-                SELECT *
-                FROM board
-                ORDER BY id DESC
+            SELECT *
+            FROM board
+            ORDER BY id DESC
             """)
     List<Board> selectAll();
 
+
     @Delete("""
-                DELETE *
-                FROM board
-                WHERE id = #{id}
-                    
+            DELETE FROM board
+            WHERE id = #{id}
             """)
-    int delete(Board board);
+    int deleteById(Integer id);
+
+
+    @Update("""
+            UPDATE board
+            SET title=#{title},
+                content=#{content},
+                writer=#{writer}
+            WHERE id = #{id}
+            """)
+    int update(Board board);
 }
