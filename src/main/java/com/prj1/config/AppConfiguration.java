@@ -1,4 +1,4 @@
-package com.prj120240501.config;
+package com.prj1.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,4 +22,4 @@ public class AppConfiguration {
         return new BCryptPasswordEncoder();
     }
 }
-@Bean
+
