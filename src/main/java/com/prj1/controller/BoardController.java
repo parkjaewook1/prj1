@@ -51,4 +51,12 @@ public class BoardController {
         // jsp 포워드
         return "board/home";
     }
+
+    @PostMapping("/delete")
+    public String method1(Board board, RedirectAttributes rttr) {
+
+        service.delete(board);
+        rttr.addAttribute("id", board.getId());
+        return "redirect:board/view";
+    }
 }
