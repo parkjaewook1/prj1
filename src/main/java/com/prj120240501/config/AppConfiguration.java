@@ -22,3 +22,4 @@ public class AppConfiguration {
         return new BCryptPasswordEncoder();
     }
 }
+@Bean
