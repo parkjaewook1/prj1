@@ -41,7 +41,13 @@
                     </label>
                     <input value="${member.inserted}" id="inputInserted" type="text" readonly="" class="form-control">
                 </div>
-                <div>
+                <div class="row">
+                    <button style="background-color: blue; margin-bottom: 5px; border: 1px solid blue"
+                            class="btn btn-danger"
+                            form="formUpdate">수정
+                    </button>
+                </div>
+                <div class="row">
                     <button class="btn btn-danger" form="formDelete">탈퇴</button>
                 </div>
             </div>
@@ -54,7 +60,11 @@
         <input type="hidden" name="id" value="${member.id}">
     </form>
 </div>
-
+<div class="d-none" onsubmit="return confirm('수정하시겠습니까?')">
+    <form action="/member/update" id="formUpdate" method="post">
+        <input type="hidden" name="id" value="${member.id}">
+    </form>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
         integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="

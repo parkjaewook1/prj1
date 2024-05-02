@@ -47,4 +47,11 @@ public class MemberController {
 
         return "redirect:/member/signup";
     }
+
+    @PostMapping("update")
+    public String update(Integer id) {
+        service.update(id);
+
+        return "redirect:member/update";
+    }
 }

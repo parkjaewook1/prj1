@@ -33,3 +33,4 @@ ALTER TABLE member
 
 SELECT *
 FROM member;
+
