@@ -8,25 +8,33 @@
           integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
-</head>
 <body>
 
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
 
+<%--div.container>div.row.justify-content-center>div.col-6--%>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
             <h3 class="mb-4">회원 가입</h3>
             <form action="/member/signup" method="post">
-                <div class="mb-3"><label for="inputEmail" class="form-label">이메일</label>
-                    <input name="email" id="inputEmail" required type="email" class="form-control"></div>
-                <div class="mb-3"><label for="inputPassword" class="form-label">패스워드</label>
-                    <input name="password" id="inputPassword" required type="password" class="form-control"></div>
-                <div class="mb-3"><label for="inputNickName" class="form-label">별명</label>
-                    <input name="nickName" id="inputNickName" required type="text" class="form-control"></div>
+                <%-- div*3>label.form-label+input.form-control--%>
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">이메일</label>
+                    <input name="email" id="inputEmail" required type="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">패스워드</label>
+                    <input name="password" id="inputPassword" required type="password" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="inputNickName" class="form-label">별명</label>
+                    <input name="nickName" id="inputNickName" required type="text" class="form-control">
+                </div>
                 <div>
                     <button class="btn btn-primary">가입</button>
                 </div>
+
             </form>
         </div>
     </div>
