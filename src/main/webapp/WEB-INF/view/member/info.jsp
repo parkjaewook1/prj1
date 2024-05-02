@@ -41,8 +41,11 @@
                     </label>
                     <input value="${member.inserted}" id="inputInserted" type="text" readonly="" class="form-control">
                 </div>
+
                 <div>
                     <button class="btn btn-danger" form="formDelete">탈퇴</button>
+
+                    <a class="btn btn-secondary" href="/member/modify?id=${member.id}">정보 수정</a>
                 </div>
             </div>
 
