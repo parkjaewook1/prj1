@@ -30,14 +30,16 @@
                     <label for="inputPassword" class="form-label">암호</label>
                     <input oninput="passwordCheck()" id="inputPassword" type="password" class="form-control"
                            name="password"
-                           value="${member.password}">
+                           value="">
+                    <div class="form-text">
+                        암호를 입력하지 않으면 기존 암호로 유지됩니다.
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputPasswordCheck" class="form-label">암호</label>
+                    <label for="inputPasswordCheck" class="form-label">암호확인</label>
                     <input oninput="passwordCheck()" id="inputPasswordCheck" type="password" class="form-control"
-                           name="password"
-                           value="${member.password}">
-                    <div class="form-text" id="passwordMessage"></div>
+                           value="">
+                    <div id="passwordMessage" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="inputNickName" class="form-label">별명</label>
@@ -68,9 +70,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
         integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-qFOQ9YFAeGj1gDOuUD61g3D+tLDv3u1ECYWqT82WQoaWrOhAY+5mRMTTVsQdWutbA5FORCnkEPEgU0OF8IzGvA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
