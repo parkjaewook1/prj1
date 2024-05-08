@@ -6,6 +6,7 @@ import com.prj1.mapper.BoardMapper;
 import com.prj1.mapper.MemberMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,12 +48,12 @@ public class MemberService {
         if (member.getPassword() != null && member.getPassword().length() > 0) {
             // 암호를 입력했을 때만 변경
             member.setPassword(encoder.encode(member.getPassword()));
-
         } else {
             // 그렇지 않으면 기존 암호 유지
             Member old = mapper.selectById(member.getId());
             member.setPassword(old.getPassword());
         }
+
         mapper.update(member);
     }
 
@@ -77,6 +78,17 @@ public class MemberService {
             Member member = user.getMember();
             return member.getId().equals(id);
         }
+        return false;
+    }
+
+    public boolean isAdmin(Authentication authentication) {
+        Object o = authentication.getPrincipal();
+        if (o instanceof CustomUser user) {
+            return user.getAuthorities().stream()
+                    .map(GrantedAuthority::getAuthority)
+                    .anyMatch(s -> s.equals("admin"));
+        }
+
         return false;
     }
 }

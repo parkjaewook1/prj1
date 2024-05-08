@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputPasswordCheck" class="form-label">암호확인</label>
+                    <label for="inputPasswordCheck" class="form-label">암호 확인</label>
                     <input oninput="passwordCheck()" id="inputPasswordCheck" type="password" class="form-control"
                            value="">
                     <div id="passwordMessage" class="form-text"></div>

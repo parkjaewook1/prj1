@@ -58,6 +58,7 @@
         </div>
     </div>
 </div>
+
 <sec:authorize access="isAuthenticated()">
     <sec:authentication property="principal.member" var="authMember"></sec:authentication>
     <c:if test="${authMember.id eq member.id}">

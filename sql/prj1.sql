@@ -51,7 +51,7 @@ ALTER TABLE board
 ALTER TABLE board
     ADD COLUMN member_id INT REFERENCES member (id);
 UPDATE board
-SET member_id = 13
+SET member_id = 9
 WHERE id > 0;
 
 DESC board;
@@ -61,6 +61,21 @@ FROM board
 LIMIT 3;
 SELECT *
 FROM member;
+DESC member;
+
+create table authority
+(
+    id        INT AUTO_INCREMENT PRIMARY KEY,
+    member_id INT         NOT NULL REFERENCES member (id),
+    name      VARCHAR(20) NOT NULL
+);
+INSERT INTO authority
+    (member_id, name)
+VALUES (18, 'admin');
+
+SELECT *
+FROM member m
+         LEFT JOIN authority a ON m.id = a.member_id;
 
 
 

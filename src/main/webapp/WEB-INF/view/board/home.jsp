@@ -10,6 +10,7 @@
 
 </head>
 <body>
+<img src="/im" alt="이미지1">
 
 <c:import url="/WEB-INF/fragment/navbar.jsp"></c:import>
 
