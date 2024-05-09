@@ -88,4 +88,10 @@ public class MemberController {
     public String loginForm() {
         return "member/login";
     }
+
+    @GetMapping("search")
+    public String top(String nickname, Model model) {
+
+        return "member/search";
+    }
 }

@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<img src="/im" alt="이미지1">
+
 
 <c:import url="/WEB-INF/fragment/navbar.jsp"></c:import>
 
@@ -120,6 +120,12 @@
                             </a>
                         </li>
                     </c:if>
+                    <form>
+                        닉네임
+                        <input type="text" name="nick_name">
+                        <form action="board/member/search"></form>
+                        <button>검색</button>
+                    </form>
                 </ul>
             </nav>
         </div>
